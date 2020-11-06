@@ -12,9 +12,6 @@
   "files": [
     "lib"
   ],
-  "publishConfig": {
-    "registry": "https://globaldevtools.bbva.com/artifactory/api/npm/npm-repo/"
-  },
   "scripts": {
     "build": "tsc",
     "test": "jest"
