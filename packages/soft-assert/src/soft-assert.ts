@@ -1,10 +1,8 @@
 import { AssertionError } from "assert";
-import { format } from "util";
 
 function formatAssertionError(err) {
-    var msg;
-    var err;
-    var message;
+    let msg;
+    let message;
     if (err.message && typeof err.message.toString === 'function') {
       message = err.message + '';
     } else if (typeof err.inspect === 'function') {
@@ -12,8 +10,8 @@ function formatAssertionError(err) {
     } else {
       message = '';
     }
-    var stack = err.stack || message;
-    var index = message ? stack.indexOf(message) : -1;
+    let stack = err.stack || message;
+    let index = message ? stack.indexOf(message) : -1;
 
     if (index === -1) {
       msg = message;
