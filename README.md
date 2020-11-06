@@ -1,4 +1,4 @@
-# soft-assert
+# `@alfonso-presa/soft-assert`
 
 This library allows you to capture assertion errors that happen during your tests in order to delay the failure until the end of the tests (or when ever you want). This is useful in case you want to test several things and you want a full feedback of assertions failing instead of just knowing the last one.
 
