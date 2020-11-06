@@ -1,0 +1,22 @@
+{
+  "name": "@alfonso-presa/soft-assert",
+  "version": "0.0.1",
+  "description": "> TODO: description",
+  "author": "Alfonso Presa <alfonso.presa@bbva.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "lib/soft-assert.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "https://globaldevtools.bbva.com/artifactory/api/npm/npm-repo/"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "jest"
+  }
+}

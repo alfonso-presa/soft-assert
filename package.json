@@ -1,0 +1,22 @@
+{
+  "name": "@alfonso-presa/soft-assert-parent",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "lerna run build",
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/chai": "^4.2.14",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^14.14.6",
+    "chai": "^4.2.0",
+    "jest": "^26.6.3",
+    "lerna": "^3.22.1",
+    "ts-jest": "^26.4.3",
+    "typescript": "^4.0.5"
+  }
+}
