@@ -10,20 +10,27 @@ npm i -D @alfonso-presa/soft-assert
 
 ## Usage
 
-Capture assertions with the `soft` method or capture them by wrapping with `wrap` a whole test method. Then when ever you want, call the `flush` method to get a single assertion error wrapping all the accumulated assertion failures.
+Capture assertions with the `soft` method or capture them by wrapping with `wrap` a whole test method (for example, a `Then` implementation in cucumber). Then when ever you want, call the `flush` method to get a single assertion error wrapping all the accumulated assertion failures.
 
 ```js
 const { soft, wrap, flush } = require("@alfonso-presa/soft-assert");
 
 describe("success", () => {
     it("should not fail", () => {
+        //Single soft assertion will not fail
         soft(() => assert(false));
+        //But will be risen when flush is reached
         assert(flush).throws();
     });
 
-    it("should not fail either", wrap(() => {
-        assert(false);
+    it("should not fail either", () => {
+        wrap(() => {
+            assert(false); //Wrapped method will halt at this point
+            thisWillNotBeExecuted();
+        })();
+        //But test will continue to the end and assertion above will be keept until flush is called
         assert(flush).throws();
-    }));
+    });
+
 });
 ```

@@ -40,4 +40,22 @@ describe("soft-assert", () => {
         }
     });
 
+    it("should raise the same assertion when only one failure happened", () => {
+        let error;
+        soft(() => {
+            try {
+                expect("a").to.equal("b");
+            } catch(e) {
+                error = e;
+                throw e;
+            }
+        });
+        try {
+            flush();
+            expect(false, "should not be reached").to.be.true;
+        } catch(e) {
+            expect(e).to.equal(error);
+        }
+    });    
+
 });
