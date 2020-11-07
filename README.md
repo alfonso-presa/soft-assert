@@ -1,6 +1,6 @@
 # `@alfonso-presa/soft-assert`
 
-This library allows you to capture assertion errors that happen during your tests in order to delay the failure until the end of the tests (or when ever you want). This is useful in case you want to test several things and you want a full feedback of assertions failing instead of just knowing the last one.
+This library allows you to capture assertion errors that happen during your tests in order to delay the failure until the end of the tests (or when ever you want). This is useful in case you want to test several things and you want a full feedback of assertions failing instead of just knowing the first one.
 
 ## Instalation
 
@@ -17,6 +17,7 @@ You may use soft-assert by proxying standar assertions libraries. This is tested
 #### Chai
 
 ```js
+const { proxy, flush } = require("@alfonso-presa/soft-assert");
 const { expect, assert } = require("chai");
 const softExpect = proxy(expect);
 const softAssert = proxy(assert);
@@ -62,6 +63,7 @@ describe("something", () => {
 #### Assert
 
 ```js
+const { proxy, flush } = require("@alfonso-presa/soft-assert");
 const assert = require("assert");
 
 const softAssert /* needed for TS : typeof assert */ = proxy(assert);
@@ -89,6 +91,7 @@ describe("something", () => {
 #### Jest
 
 ```js
+const { proxy, flush } = require("@alfonso-presa/soft-assert");
 const softExpect = proxy(expect);
 
 describe("something", () => {
