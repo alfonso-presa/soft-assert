@@ -18,8 +18,8 @@ You may use soft-assert by proxying standar assertions libraries. This is tested
 
 ```js
 const { expect, assert } = require("chai");
-const softExpect = proxy(chaiExpect);
-const softAssert = proxy(chaiAssert);
+const softExpect = proxy(expect);
+const softAssert = proxy(assert);
 
 describe("something", () => {
     it("should capture exceptions with wrapped chai expectation library", () => {
