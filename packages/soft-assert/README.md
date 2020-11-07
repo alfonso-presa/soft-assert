@@ -1,11 +1,3 @@
 # `@alfonso-presa/soft-assert`
 
-> TODO: description
-
-## Usage
-
-```
-const softAssert = require('@alfonso-presa/soft-assert');
-
-// TODO: DEMONSTRATE API
-```
+see https://github.com/alfonso-presa/soft-assert
