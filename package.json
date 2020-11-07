@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "lerna run build",
+    "prepare": "npm run build",
     "test": "jest"
   },
   "author": "",
