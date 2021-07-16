@@ -126,13 +126,15 @@ export class SoftAssert {
     }
 
     flush() {
-        if(this.captured.length > 1) {
-            const message = this.captured.map(formatAssertionError).join("\n");
+        if (this.captured.length > 1) {
+            let message = `Total failures are: ${this.captured.length}\n\n${this.captured.map(formatAssertionError).join("\n\n")}`;
             this.captured = [];
-            throw new AssertionError({message});
-            
-        } else if(this.captured.length === 1) {
-            throw this.captured[0];
+            throw new AssertionError({ message });
+        }
+        else if (this.captured.length === 1) {
+            const message = this.captured[0];
+            this.captured = [];
+            throw message;
         }
     }
 
