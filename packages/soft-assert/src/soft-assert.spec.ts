@@ -129,4 +129,14 @@ describe("soft-assert", () => {
         }
     });    
 
+    it("should not fail on second flush because of first", () => {
+        soft(() => {
+            expect("a").toEqual("b");
+        });
+        try {
+            flush();
+        } catch(e) {}
+        flush();
+    });    
+
 });
